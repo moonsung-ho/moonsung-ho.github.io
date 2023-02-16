@@ -50,29 +50,29 @@ export default function Home() {
       <section
         id="about"
         style={{ width: "100vw", marginTop: "12vh" }}
-        className="p-5 d-flex flex-column align-items-center"
+        className="p-0 d-flex flex-column align-items-center"
       >
         <h1 className="fw-semibold visually-hidden">About</h1>
         <p
           style={{ alignSelf: "center", alignContent: "center" }}
-          className="fs-3 fw-bold"
+          className="fs-3 fw-bold m-5 text-center"
         >
           세모는 매일 수백 명이 사용하는 서비스를 만듭니다.
         </p>
         <div className="d-flex flex-column flex-md-row align-items-center">
-          <p className="m-2 px-4 py-1 ms-0 ps-0 fs-3 fw-semibold d-flex flex-column align-items-end">
+          <p className="m-2 px-4 py-1 ms-0 ps-0 fs-3 fw-semibold d-flex flex-column align-items-center">
             <span className="text-muted fs-4">누적 다운로드</span>{" "}
             <strong className="fw-bolder" style={{ fontSize: 65 }}>
               1만 +
             </strong>
           </p>
-          <p className="m-2 p-2 px-4 fs-3 fw-semibold d-flex flex-column align-items-end">
+          <p className="m-2 p-2 px-4 fs-3 fw-semibold d-flex flex-column align-items-center">
             <span className="text-muted fs-4">일일 사용자</span>{" "}
             <strong className=" fw-bolder" style={{ fontSize: 65 }}>
               600 +
             </strong>
           </p>
-          <p className="m-2 p-2 px-4 fs-3 fw-semibold d-flex flex-column align-items-end">
+          <p className="m-2 p-2 px-4 fs-3 fw-semibold d-flex flex-column align-items-center">
             <span className="text-muted fs-4">출시 서비스</span>{" "}
             <strong className=" fw-bolder" style={{ fontSize: 65 }}>
               2 +
@@ -82,9 +82,9 @@ export default function Home() {
         <div
           id="vision"
           className="d-flex flex-column align-items-center w-100 "
-          style={{ marginTop: "30vh" }}
+          style={{ marginTop: "20vh" }}
         >
-          <div className="d-flex flex-column align-items-center fw-semibold fs-3 bg-secondary bg-opacity-100 border rounded-5 text-white w-75 p-5">
+          <div className="d-flex flex-column align-items-center fw-semibold fs-3 bg-secondary bg-opacity-100 border rounded-5 text-white w-100 p-5">
             <p className="m-0 text-center">
               우리는 세상을 바꾸고 싶고, 바꿀 수 있습니다.
             </p>
@@ -100,7 +100,7 @@ export default function Home() {
       <section
         id="services"
         style={{ width: "100vw", height: "50vh" }}
-        className="p-5 d-flex flex-column align-items-center"
+        className="p-5 d-flex flex-column align-items-center mt-5"
       >
         <p className="fs-3 fw-bold">세모가 바꿀 세상</p>
         <div className="text-center w-100 d-flex flex-column flex-md-row">
@@ -142,8 +142,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer className="d-flex flex-column align-items-center justify-content-center w-100 mt-5 mt-lg-0 border-2 border-top rounded-5 p-5">
-        <div className="d-flex align-items-center justify-content-center">
+      <footer
+        className="d-flex flex-column align-items-center justify-content-center w-100 border-2 border-top rounded-5 p-5 pt-0"
+        style={{ marginTop: 130 }}
+      >
+        <div
+          className="d-flex align-items-center justify-content-center"
+          style={{ marginTop: 50 }}
+        >
           <SocialIcon url="https://github.com/sungho0205" className="mx-2" />
           <SocialIcon url="https://twitter.com/Sungho__Moon" className="mx-2" />
           <SocialIcon
