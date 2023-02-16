@@ -1,8 +1,5 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import "./globals.css";
-import localFont from "@next/font/local";
-
-const Pretendard = localFont({ src: "../public/PretendardVariable.woff2" });
 
 export default function RootLayout({ children }) {
   return (
@@ -12,7 +9,7 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={Pretendard.className}>
+      <body>
         <nav
           className="navbar navbar-dark navbar-expand-sm bg-black sticky-top"
           id="navbar"
