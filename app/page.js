@@ -14,11 +14,8 @@ export default function Home() {
     import("bootstrap/dist/js/bootstrap");
   }, []);
 
-  const [fantasticWord, setFantasticWord] = useState("만들");
-  useEffect(() => {
-    const fantasticWords = ["만들", "그리", "쓰", "덮", "바꾸", "달리", "뒤집"];
-    setFantasticWord(fantasticWords[Math.floor(Math.random() * 7)]);
-  }, []);
+  const fantasticWords = ["만들", "그리", "쓰", "덮", "바꾸", "달리", "뒤집"];
+  const FantasticWord = fantasticWords[Math.floor(Math.random() * 7)];
 
   const control = useAnimation();
   const [ref, inView] = useInView();
