@@ -16,8 +16,8 @@ export default function Home() {
 
   const [fantasticWord, setFantasticWord] = useState("만들");
   useEffect(() => {
-    const fantasticWords = ["만들", "그리", "쓰", "덮"];
-    setFantasticWord(fantasticWords[Math.floor(Math.random() * 3)]);
+    const fantasticWords = ["만들", "그리", "쓰", "덮", "바꾸", "달리", "뒤집"];
+    setFantasticWord(fantasticWords[Math.floor(Math.random() * 7)]);
   }, []);
 
   const control = useAnimation();
