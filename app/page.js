@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   const fantasticWords = ["만들", "그리", "쓰", "덮", "바꾸", "달리", "뒤집"];
-  const FantasticWord = fantasticWords[Math.floor(Math.random() * 7)];
+  const fantasticWord = fantasticWords[Math.floor(Math.random() * 7)];
 
   const control = useAnimation();
   const [ref, inView] = useInView();
