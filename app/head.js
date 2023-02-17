@@ -7,7 +7,7 @@ export default function Head() {
       <title>세모</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description" content="cemo" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.png" />
     </>
   );
 }
