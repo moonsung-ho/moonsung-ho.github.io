@@ -112,11 +112,11 @@ export default function Home() {
             style={{ marginTop: "20vh" }}
           >
             <div
-              className=" text-break d-flex flex-column align-items-center fw-semibold fs-3 bg-secondary bg-opacity-100 border rounded-5 text-white w-100 p-5"
+              className=" text-break d-flex flex-column align-items-center fw-semibold fs-3 bg-secondary bg-opacity-100 border rounded-5 text-white w-100 py-5 px-md-5"
               style={{ boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)" }}
             >
               <h3 className="fw-bolder fs-2">Vision</h3>
-              <p className="m-0 mx-5 text-center px-5">
+              <p className="m-0 mx-5 text-center px-1 px-lg-5">
                 우리는 세상을 바꾸고 싶고, 바꿀 수 있습니다. 우리는 항상 노력과
                 고민을 하고 있으며, 불편하고, 어렵고, 힘들던 부분을 고쳐 나가고
                 있습니다.
