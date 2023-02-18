@@ -8,14 +8,16 @@ import { SocialIcon } from "react-social-icons";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import AnimatedOnScroll from "@/pages/api/scrollanimationComponent";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
+  const isMobile = useMediaQuery({
+    query: "(max-width:767px)"
+  });
+
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
   }, []);
-
-  const fantasticWords = ["만들", "그리", "쓰", "덮", "바꾸", "달리", "뒤집"];
-  const fantasticWord = fantasticWords[Math.floor(Math.random() * 7)];
 
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -61,7 +63,7 @@ export default function Home() {
             style={{ alignSelf: "center", margin: 10, color: "white" }}
             className="fw-bolder fs-3 m-3"
           >
-            세모, 세상을 {fantasticWord}다.
+            세모, 세상을 바꾸다.
           </span>
           <p className="text-light fs-6 fw-semibold">
             일상에 도움을 주는 소프트웨어를 개발합니다.
@@ -175,7 +177,7 @@ export default function Home() {
               </AnimatedOnScroll>
             </div>
           </div>
-          <div className="text-center w-100 d-flex flex-column flex-md-row">
+          <div className="text-center w-100 d-flex flex-column flex-md-row mb-5 mb-md-0">
             <div
               id="fakeupdate"
               style={{
@@ -224,10 +226,10 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <div>
+      <div className="mt-5 mt-md-0">
         <footer
           className="d-flex flex-column align-items-center justify-content-center w-100 border-2 border-top rounded-5 p-5 pt-0"
-          style={{ marginTop: 500 }}
+          style={{ marginTop: (isMobile && 500) || 0 }}
         >
           <AnimatedOnScroll>
             <div
