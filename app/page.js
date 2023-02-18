@@ -205,7 +205,7 @@ export default function Home() {
               id="esat"
               style={{
                 backgroundImage:
-                  "url('https://github.com/sungho0205/fakeupdate/blob/master/SCR-20230218-k5.png?raw=true')",
+                  "url('https://github.com/moonsung-ho/fakeupdate/blob/master/SCR-20230218-k5.png?raw=true')",
                 backgroundSize: "100%",
                 height: "300px",
                 backgroundRepeat: "no-repeat",
@@ -217,7 +217,7 @@ export default function Home() {
                 <h1 className="fw-bolder text-light">Fakeupdate</h1>
                 <Link
                   className="text-decoration-none fs-4 fw-semibold p-2 py-1 rounded rounded-pill bg-white"
-                  href={"https://sungho0205.github.io/fakeupdate/"}
+                  href={"https://moonsung-ho.github.io/fakeupdate/"}
                 >
                   더 알아보기
                 </Link>
@@ -237,7 +237,7 @@ export default function Home() {
               style={{ marginTop: 50 }}
             >
               <SocialIcon
-                url="https://github.com/sungho0205"
+                url="https://github.com/moonsung-ho"
                 className="mx-2"
               />
               <SocialIcon
