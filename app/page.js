@@ -9,6 +9,8 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import AnimatedOnScroll from "@/pages/api/scrollanimationComponent";
 import { useMediaQuery } from "react-responsive";
+import { BsChevronCompactDown } from "react-icons/bs";
+import WiAlae from "@/pages/api/downbuttonanimation";
 
 export default function Home() {
   const isMobile = useMediaQuery({
@@ -50,24 +52,36 @@ export default function Home() {
         style={{
           width: "100vw",
           textAlign: "center",
-          height: "30vh",
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1676236285859-a2907b80f927?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2874&q=80")',
-          backgroundSize: "100vw",
-          backgroundPosition: "center"
+          height: "100vh",
+          backgroundImage: 'url("/background-main.jpg")',
+          backgroundSize: (isMobile && "100% 100%") || "100%",
+          backgroundPosition: "center",
+          backgroundRepeat: "space",
+          backgroundAttachment: "fixed"
         }}
         className="justify-content-center d-flex align-items-center"
       >
         <div>
-          <span
-            style={{ alignSelf: "center", margin: 10, color: "white" }}
-            className="fw-bolder fs-3 m-3"
-          >
-            세모, 세상을 바꾸다.
-          </span>
-          <p className="text-light fs-6 fw-semibold">
-            일상에 도움을 주는 소프트웨어를 개발합니다.
-          </p>
+          <AnimatedOnScroll duration={0.3}>
+            <span
+              style={{ alignSelf: "center", margin: 10, color: "white" }}
+              className="fw-bolder fs-2 m-3"
+            >
+              문성호
+            </span>
+          </AnimatedOnScroll>
+          <AnimatedOnScroll duration={0.6}>
+            <p className="text-light fs-5 fw-semibold mb-5">
+              일상에 도움을 주는 소프트웨어를 개발합니다.
+            </p>
+          </AnimatedOnScroll>
+          <WiAlae duration={1}>
+            <BsChevronCompactDown
+              color="white"
+              size={35}
+              // style={{ position: "absolute", bottom: "100px" }}
+            />
+          </WiAlae>
         </div>
       </section>
       <section
@@ -78,11 +92,11 @@ export default function Home() {
         <h1 className="fw-semibold visually-hidden">About</h1>
         <p
           style={{ alignSelf: "center", alignContent: "center" }}
-          className="fs-3 fw-bold m-5 text-center"
+          className="fs-2 fw-bold m-5 text-center"
         >
-          세모는 매일 수백 명이 사용하는 서비스를 만듭니다.
+          매일 수백 명이 사용하는 서비스를 만듭니다.
         </p>
-        <AnimatedOnScroll>
+        <AnimatedOnScroll duration={0.3}>
           <div className="d-flex flex-column flex-md-row align-items-center">
             <p className="m-2 px-4 py-1 ms-0 ps-0 fs-3 fw-semibold d-flex flex-column align-items-center">
               <span className="text-muted fs-4">누적 다운로드</span>{" "}
@@ -104,33 +118,45 @@ export default function Home() {
             </p>
           </div>
         </AnimatedOnScroll>
-        <AnimatedOnScroll>
+
+        <div
+          id="vision"
+          className="d-flex flex-column align-items-center m-0 m-md-5"
+          style={{
+            marginTop: "20vh"
+          }}
+        >
           <div
-            id="vision"
-            className="d-flex flex-column align-items-center w-100 "
-            style={{ marginTop: "20vh" }}
+            className=" d-flex flex-column align-items-center fw-semibold fs-3 bg-secondary bg-opacity-100 border rounded-5 text-white w-100 py-5 px-md-5"
+            style={{
+              boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)",
+              backgroundImage: "url('/visionbackground.jpg')",
+              backgroundSize: "100%",
+              backgroundPositionY: 0,
+              backgroundAttachment: "fixed"
+            }}
           >
-            <div
-              className=" text-break d-flex flex-column align-items-center fw-semibold fs-3 bg-secondary bg-opacity-100 border rounded-5 text-white w-100 py-5 px-md-5"
-              style={{ boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)" }}
-            >
+            {" "}
+            <AnimatedOnScroll duration={0.2}>
               <h3 className="fw-bolder fs-2">Vision</h3>
-              <p className="m-0 mx-5 text-center px-1 px-lg-5">
-                우리는 세상을 바꾸고 싶고, 바꿀 수 있습니다. 우리는 항상 노력과
-                고민을 하고 있으며, 불편하고, 어렵고, 힘들던 부분을 고쳐 나가고
-                있습니다.
+            </AnimatedOnScroll>
+            <AnimatedOnScroll duration={0.4}>
+              <p className="m-0 mx-2 mx-md-5 text-center px-1 px-lg-5 text-break">
+                항상 노력과 고민을 하고 있으며, 불편하고, 어렵고, 힘들던 부분을
+                고쳐 나가고 있습니다.
               </p>
-            </div>
+            </AnimatedOnScroll>
           </div>
-        </AnimatedOnScroll>
+        </div>
       </section>
+
       <div>
         <section
           id="services"
           style={{ width: "100vw", height: "130vh" }}
           className="p-5 d-flex flex-column align-items-center mt-5"
         >
-          <p className="fs-3 fw-bold">세모가 바꿀 세상</p>
+          <p className="fs-3 fw-bold">문성호가 만든 서비스</p>
           <div className="text-center w-100 d-flex flex-column flex-md-row">
             <div
               id="급식시간"
@@ -143,7 +169,7 @@ export default function Home() {
               }}
               className="m-3 ms-0 d-flex flex-column align-items-center justify-content-start border border-2 rounded px-5 pb-5 pt-4 w-100"
             >
-              <AnimatedOnScroll>
+              <AnimatedOnScroll duration={0.5}>
                 <h1 className="fw-bolder">급식시간</h1>
                 <Link
                   className="text-decoration-none fs-4 fw-semibold p-2 py-1 rounded rounded-pill bg-white"
@@ -166,7 +192,7 @@ export default function Home() {
               }}
               className="m-3 ms-0 d-flex flex-column align-items-center justify-content-start border border-2 rounded px-5 pb-5 pt-4 w-100"
             >
-              <AnimatedOnScroll>
+              <AnimatedOnScroll duration={0.3}>
                 <h1 className="fw-bolder text-light">Memorus</h1>
                 <Link
                   className="text-decoration-none fs-4 fw-semibold p-2 py-1 rounded rounded-pill bg-white"
@@ -183,14 +209,14 @@ export default function Home() {
               style={{
                 backgroundImage:
                   "url('https://camo.githubusercontent.com/8076bfa218274fa7234275809cfa9773b776dc6a979115d14de1d45ac4c18f1b/68747470733a2f2f692e696d6775722e636f6d2f5a6b384f7a516b2e706e67')",
-                backgroundSize: "100%",
+                backgroundSize: "300%",
                 height: "300px",
                 backgroundRepeat: "round",
                 boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)"
               }}
               className="m-3 ms-0 d-flex flex-column align-items-center justify-content-start border border-2 rounded px-5 pb-5 pt-4 w-100"
             >
-              <AnimatedOnScroll>
+              <AnimatedOnScroll duration={0.3}>
                 <h1 className="fw-bolder text-light">esat</h1>
                 <Link
                   className="text-decoration-none fs-4 fw-semibold p-2 py-1 rounded rounded-pill bg-white"
@@ -208,12 +234,11 @@ export default function Home() {
                   "url('https://github.com/moonsung-ho/fakeupdate/blob/master/SCR-20230218-k5.png?raw=true')",
                 backgroundSize: "100%",
                 height: "300px",
-                backgroundRepeat: "no-repeat",
                 boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)"
               }}
               className="m-3 ms-0 d-flex flex-column align-items-center justify-content-start border border-2 rounded px-5 pb-5 pt-4 w-100"
             >
-              <AnimatedOnScroll>
+              <AnimatedOnScroll duration={0.3}>
                 <h1 className="fw-bolder text-light">Fakeupdate</h1>
                 <Link
                   className="text-decoration-none fs-4 fw-semibold p-2 py-1 rounded rounded-pill bg-white"
@@ -231,27 +256,34 @@ export default function Home() {
           className="d-flex flex-column align-items-center justify-content-center w-100 border-2 border-top rounded-5 p-5 pt-0"
           style={{ marginTop: (isMobile && 500) || 0 }}
         >
-          <AnimatedOnScroll>
-            <div
-              className="d-flex align-items-center justify-content-center"
-              style={{ marginTop: 50 }}
-            >
+          <div
+            className="d-flex align-items-center justify-content-center"
+            style={{ marginTop: 50 }}
+          >
+            <AnimatedOnScroll duration={0.3}>
               <SocialIcon
                 url="https://github.com/moonsung-ho"
                 className="mx-2"
               />
+            </AnimatedOnScroll>
+            <AnimatedOnScroll duration={0.4}>
               <SocialIcon
                 url="https://twitter.com/Sungho__Moon"
                 className="mx-2"
               />
+            </AnimatedOnScroll>
+            <AnimatedOnScroll duration={0.5}>
               <SocialIcon
                 url="https://www.facebook.com/appmealtime"
                 className="mx-2"
               />
+            </AnimatedOnScroll>
+            <AnimatedOnScroll duration={0.6}>
               <SocialIcon url="mailto:me@sungho.xyz" className="mx-2" />
-            </div>
-          </AnimatedOnScroll>
-          <p className="mt-3">©2023 문성호, All Rights Reserved.</p>
+            </AnimatedOnScroll>
+          </div>
+
+          <p className="mt-3">2023, 문성호</p>
         </footer>
       </div>
     </main>

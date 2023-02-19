@@ -2,7 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 
-export default function AnimatedOnScroll({ children, duration }) {
+export default function WiAlae({ children, duration }) {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
@@ -11,21 +11,18 @@ export default function AnimatedOnScroll({ children, duration }) {
       control.start({
         opacity: 1,
         scale: 1,
-        y: 0,
-        transition: { duration: duration }
-      });
-    } else {
-      control.start({
-        opacity: 0,
-        scale: 1,
-        y: 10,
-        transition: { duration: duration }
+        y: -10,
+        transition: {
+          duration: duration,
+          repeat: Infinity,
+          repeatType: "reverse"
+        }
       });
     }
-  }, [duration, control, inView]);
+  }, [control, duration, inView]);
 
   return (
-    <motion.div animate={control} ref={ref} initial="hidden">
+    <motion.div animate={control} ref={ref} initial="">
       {children}
     </motion.div>
   );

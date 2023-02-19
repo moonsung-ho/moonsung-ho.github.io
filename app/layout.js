@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-sync-scripts */
+import Image from "next/image";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -9,15 +10,28 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
+      <body
+        data-bs-spy="scroll"
+        data-bs-target="#navbar"
+        data-bs-smooth-scroll="true"
+      >
         <nav
           className="navbar navbar-dark navbar-expand-sm bg-black sticky-top"
           id="navbar"
           style={{ position: "sticky" }}
         >
           <div className="container-fluid">
+            <a href="#">
+              <Image
+                src={"/favicon.png"}
+                alt="로고"
+                width={25}
+                height={25}
+                className="me-2"
+              />
+            </a>
             <a className="navbar-brand" href="#" style={{ fontWeight: 600 }}>
-              세모
+              문성호
             </a>
             <button
               className="navbar-toggler"
@@ -41,7 +55,7 @@ export default function RootLayout({ children }) {
                   className="offcanvas-title text-white fw-bold"
                   id="offcanvasNavbarLabel"
                 >
-                  세모
+                  문성호
                 </h5>
                 <button
                   type="button"
