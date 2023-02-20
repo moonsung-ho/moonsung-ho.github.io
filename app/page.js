@@ -8,15 +8,11 @@ import { SocialIcon } from "react-social-icons";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import AnimatedOnScroll from "@/pages/api/scrollanimationComponent";
-import { useMediaQuery } from "react-responsive";
 import { BsChevronCompactDown } from "react-icons/bs";
 import WiAlae from "@/pages/api/downbuttonanimation";
+import { isMobile } from "react-device-detect";
 
 export default function Home() {
-  const isMobile = useMediaQuery({
-    query: "(max-width:767px)"
-  });
-
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
   }, []);
@@ -54,7 +50,7 @@ export default function Home() {
           textAlign: "center",
           height: "100vh",
           backgroundImage: 'url("/background-main.jpg")',
-          backgroundSize: (isMobile && "100% 100%") || "100%",
+          backgroundSize: (isMobile && "120% 120%") || "150%",
           backgroundPosition: "center",
           backgroundRepeat: "space",
           backgroundAttachment: "fixed"

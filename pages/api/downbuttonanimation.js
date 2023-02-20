@@ -18,6 +18,13 @@ export default function WiAlae({ children, duration }) {
           repeatType: "reverse"
         }
       });
+    } else {
+      control.start({
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: { duration: duration }
+      });
     }
   }, [control, duration, inView]);
 

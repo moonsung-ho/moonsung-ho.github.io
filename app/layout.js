@@ -1,8 +1,12 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import Image from "next/image";
+import { isMobile } from "react-device-detect";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
+  if (isMobile) {
+    console.warn("mobile");
+  }
   return (
     <html lang="en">
       {/*
@@ -22,15 +26,22 @@ export default function RootLayout({ children }) {
         >
           <div className="container-fluid">
             <a href="#">
-              <Image
+              {/* <Image
                 src={"/favicon.png"}
                 alt="로고"
                 width={25}
                 height={25}
                 className="me-2"
-              />
+              /> */}
             </a>
-            <a className="navbar-brand" href="#" style={{ fontWeight: 600 }}>
+            <a
+              className="navbar-brand"
+              href="#"
+              style={{
+                fontWeight: 600,
+                position: isMobile ? "absolute" : ""
+              }}
+            >
               문성호
             </a>
             <button
@@ -42,14 +53,12 @@ export default function RootLayout({ children }) {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-
             <div
               className="offcanvas offcanvas-end bg-dark"
               tabindex="-1"
               id="navbarOffcanvasSm"
               aria-labelledby="navbarOffcanvasLgLabel"
             >
-              {" "}
               <div className="offcanvas-header">
                 <h5
                   className="offcanvas-title text-white fw-bold"
