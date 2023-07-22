@@ -16,6 +16,7 @@ export default function Home() {
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
   }, []);
+  const [footerMargin, setFooterMargin] = useState(0);
 
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -26,17 +27,25 @@ export default function Home() {
         opacity: 1,
         scale: 1,
         y: -10,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.3 },
       });
     } else {
       control.start({
         opacity: 0,
         scale: 1,
         y: 0,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.3 },
       });
     }
   }, [control, inView]);
+
+  useEffect(() => {
+    if (isMobile) {
+      setFooterMargin(500);
+    } else {
+      setFooterMargin(0);
+    }
+  }, []);
 
   return (
     <main
@@ -53,7 +62,7 @@ export default function Home() {
           backgroundSize: (isMobile && "120% 120%") || "150%",
           backgroundPosition: "center",
           backgroundRepeat: "space",
-          backgroundAttachment: "fixed"
+          backgroundAttachment: "fixed",
         }}
         className="justify-content-center d-flex align-items-center"
       >
@@ -97,13 +106,13 @@ export default function Home() {
             <p className="m-2 px-4 py-1 ms-0 ps-0 fs-3 fw-semibold d-flex flex-column align-items-center">
               <span className="text-muted fs-4">누적 다운로드</span>{" "}
               <strong className="fw-bolder" style={{ fontSize: 65 }}>
-                1만+
+                1.5만+
               </strong>
             </p>
             <p className="m-2 p-2 px-4 fs-3 fw-semibold d-flex flex-column align-items-center">
               <span className="text-muted fs-4">일일 사용자</span>{" "}
               <strong className=" fw-bolder" style={{ fontSize: 65 }}>
-                600+
+                800+
               </strong>
             </p>
             <p className="m-2 p-2 px-4 fs-3 fw-semibold d-flex flex-column align-items-center">
@@ -119,7 +128,7 @@ export default function Home() {
           id="vision"
           className="d-flex flex-column align-items-center m-0 m-md-5"
           style={{
-            marginTop: "20vh"
+            marginTop: "20vh",
           }}
         >
           <div
@@ -129,7 +138,7 @@ export default function Home() {
               backgroundImage: "url('/visionbackground.jpg')",
               backgroundSize: "100%",
               backgroundPositionY: 0,
-              backgroundAttachment: "fixed"
+              backgroundAttachment: "fixed",
             }}
           >
             {" "}
@@ -161,7 +170,7 @@ export default function Home() {
                   "url('https://geupsik.super.site/_next/image?url=https%3A%2F%2Fsuper-static-assets.s3.amazonaws.com%2F5ea823c7-5f9c-4d02-997a-af69528b5976%2Fimages%2Fb75dd08f-f224-4cbc-8698-2aa71211242f.png&w=3840&q=80')",
                 backgroundSize: "100%",
                 height: "300px",
-                boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)"
+                boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)",
               }}
               className="m-3 ms-0 d-flex flex-column align-items-center justify-content-start border border-2 rounded px-5 pb-5 pt-4 w-100"
             >
@@ -184,7 +193,7 @@ export default function Home() {
                 backgroundSize: "100%",
                 backgroundPosition: "center",
                 height: "300px",
-                boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)"
+                boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)",
               }}
               className="m-3 ms-0 d-flex flex-column align-items-center justify-content-start border border-2 rounded px-5 pb-5 pt-4 w-100"
             >
@@ -208,7 +217,7 @@ export default function Home() {
                 backgroundSize: "300%",
                 height: "300px",
                 backgroundRepeat: "round",
-                boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)"
+                boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)",
               }}
               className="m-3 ms-0 d-flex flex-column align-items-center justify-content-start border border-2 rounded px-5 pb-5 pt-4 w-100"
             >
@@ -224,21 +233,22 @@ export default function Home() {
             </div>
 
             <div
-              id="esat"
+              id="cemo"
               style={{
-                backgroundImage:
-                  "url('https://github.com/moonsung-ho/fakeupdate/blob/master/SCR-20230218-k5.png?raw=true')",
+                backgroundImage: "url('https://i.ibb.co/LtkqDBn/image.png')",
                 backgroundSize: "100%",
                 height: "300px",
-                boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)"
+                boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)",
               }}
               className="m-3 ms-0 d-flex flex-column align-items-center justify-content-start border border-2 rounded px-5 pb-5 pt-4 w-100"
             >
               <AnimatedOnScroll duration={0.3}>
-                <h1 className="fw-bolder text-light">Fakeupdate</h1>
+                <h1 className="fw-bolder text-white rounded rounded-4 bg-dark p-1 px-2">
+                  cemo(url 단축기)
+                </h1>
                 <Link
                   className="text-decoration-none fs-4 fw-semibold p-2 py-1 rounded rounded-pill bg-white"
-                  href={"https://moonsung-ho.github.io/fakeupdate/"}
+                  href={"https://cemo.site"}
                 >
                   더 알아보기
                 </Link>
@@ -247,40 +257,36 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <div className="mt-5 mt-md-0">
-        <footer
-          className="d-flex flex-column align-items-center justify-content-center w-100 border-2 border-top rounded-5 p-5 pt-0"
-          style={{ marginTop: (isMobile && 500) || 0 }}
+      <div
+        className="d-flex flex-column align-items-center justify-content-center w-100 border-2 border-top rounded-5 p-5 pt-0"
+        style={{ marginTop: footerMargin }}
+      >
+        <div
+          className="d-flex align-items-center justify-content-center"
+          style={{ marginTop: 50 }}
         >
-          <div
-            className="d-flex align-items-center justify-content-center"
-            style={{ marginTop: 50 }}
-          >
-            <AnimatedOnScroll duration={0.3}>
-              <SocialIcon
-                url="https://github.com/moonsung-ho"
-                className="mx-2"
-              />
-            </AnimatedOnScroll>
-            <AnimatedOnScroll duration={0.4}>
-              <SocialIcon
-                url="https://twitter.com/Sungho__Moon"
-                className="mx-2"
-              />
-            </AnimatedOnScroll>
-            <AnimatedOnScroll duration={0.5}>
-              <SocialIcon
-                url="https://www.facebook.com/appmealtime"
-                className="mx-2"
-              />
-            </AnimatedOnScroll>
-            <AnimatedOnScroll duration={0.6}>
-              <SocialIcon url="mailto:me@sungho.xyz" className="mx-2" />
-            </AnimatedOnScroll>
-          </div>
-
-          <p className="mt-3">2023, 문성호</p>
-        </footer>
+          <AnimatedOnScroll duration={0.3}>
+            <SocialIcon url="https://github.com/moonsung-ho" className="mx-2" />
+          </AnimatedOnScroll>
+          <AnimatedOnScroll duration={0.4}>
+            <SocialIcon
+              url="https://twitter.com/Sungho__Moon"
+              className="mx-2"
+            />
+          </AnimatedOnScroll>
+          <AnimatedOnScroll duration={0.5}>
+            <SocialIcon
+              url="https://www.facebook.com/appmealtime"
+              className="mx-2"
+            />
+          </AnimatedOnScroll>
+          <AnimatedOnScroll duration={0.6}>
+            <SocialIcon url="mailto:me@sungho.xyz" className="mx-2" />
+          </AnimatedOnScroll>
+        </div>
+        <p className="mt-3">
+          2023 <Link href="https://github.com/moonsung-ho">문성호</Link>
+        </p>
       </div>
     </main>
   );
