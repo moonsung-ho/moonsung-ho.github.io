@@ -41,7 +41,7 @@ export default function Home() {
 
   useEffect(() => {
     if (isMobile) {
-      setFooterMargin(500);
+      setFooterMargin(700);
     } else {
       setFooterMargin(0);
     }
@@ -210,7 +210,7 @@ export default function Home() {
           </div>
           <div className="text-center w-100 d-flex flex-column flex-md-row mb-5 mb-md-0">
             <div
-              id="fakeupdate"
+              id="esat"
               style={{
                 backgroundImage:
                   "url('https://camo.githubusercontent.com/8076bfa218274fa7234275809cfa9773b776dc6a979115d14de1d45ac4c18f1b/68747470733a2f2f692e696d6775722e636f6d2f5a6b384f7a516b2e706e67')",
@@ -239,12 +239,13 @@ export default function Home() {
                 backgroundSize: "100%",
                 height: "300px",
                 boxShadow: "0px 9px 40px -9px rgba(0,0,0,0.59)",
+                backgroundPosition: "center",
               }}
               className="m-3 ms-0 d-flex flex-column align-items-center justify-content-start border border-2 rounded px-5 pb-5 pt-4 w-100"
             >
               <AnimatedOnScroll duration={0.3}>
-                <h1 className="fw-bolder text-white rounded rounded-4 bg-dark p-1 px-2">
-                  cemo(url 단축기)
+                <h1 className="fw-bolder text-dark rounded rounded-4 bg-white p-1 px-2">
+                  cemo.site
                 </h1>
                 <Link
                   className="text-decoration-none fs-4 fw-semibold p-2 py-1 rounded rounded-pill bg-white"
