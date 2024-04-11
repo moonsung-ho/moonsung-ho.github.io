@@ -1,3 +1,3 @@
-# website of cemo
+# website
 
-- https://cemo.site
+- https://sungho.xyz
